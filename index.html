@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-box">
+        <div class="header">
+            <div class="header-items ">
+              <!-- <img src="./assets/image/location-pin.png" alt=""> -->
+               <h4 class="location" ></h4>
+            </div>
+            <div class="header-items">
+                <h4 class="currentDate-text"></h4>
+            </div>
+            <div class="header-items">
+                <input type="text" placeholder="Search..." class="cityName">
+                <img src="./assets/image/search.png" alt="" class="search">
+            </div>
+          </div>
+          <div class="mainSection " style="display: none;">
+            <div class="mainSection-left">
+              <div class="top">
+                <div class="sectionLeft-top">
+                  <div class="temp">
+                    <h1 class="temp-text"><sup>°C</sup></h1>
+                  </div>
+                  <div class="wind-humidity">
+                    <div class="windSpeed">
+                      <div>
+                        <img src="./assets/image/windy.png" alt="" />
+                      </div>
+                      <div>
+                        <h3 class="windSpeed-txt"></h3>                                                </h3>
+                      </div>
+                    </div>
+                    <div class="humidity">
+                      <div>
+                        <img src="./assets/image/humidity.png" alt="" />
+                      </div>
+                      <div>
+                        <h3 class="humidity-txt"></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h1 class="weather-txt"></h1>
+                </div>
+              </div>
+              <div class="dayForecast">
+                  <div class="card">
+                      <h3>15 Dec</h3>
+                      <img src="./assets/image/weather/clear.svg" alt="">
+                      <h3>20 °C</h3>
+                  </div>
+                  <div class="card">
+                      <h3>15 Dec</h3>
+                      <img src="./assets/image/weather/clouds.svg" alt="">
+                      <h3>20 °C</h3>
+                  </div>
+                  <div class="card">
+                      <h3>15 Dec</h3>
+                      <img src="./assets/image/weather/snow.svg" alt="">
+                      <h3>20 °C</h3>
+                  </div>
+                  <div class="card">
+                      <h3>15 Dec</h3>
+                      <img src="./assets/image/weather/thunderstorm.svg" alt="">
+                      <h3>20 °C</h3>
+                  </div>
+                  <div class="card">
+                      <h3>15 Dec</h3>
+                      <img src="./assets/image/weather/rain.svg" alt="">
+                      <h3>20 °C</h3>
+                  </div>
+                  <div class="card">
+                      <h3>15 Dec</h3>
+                      <img src="./assets/image/weather/drizzle.svg" alt="">
+                      <h3>20 °C</h3>
+                  </div>
+                  <div class="card">
+                      <h3>15 Dec</h3>
+                      <img src="./assets/image/weather/rain.svg" alt="">
+                      <h3>20 °C</h3>
+                  </div>
+              </div>
+            </div>
+            <div class="mainSection-right">
+              <div class="time">
+                  <h3 class="time"></h3>
+                  <img src="" class="imgDescription">
+                  <p class="smallWeatherTxt" style="font-size: 20px;"></p>
+              </div>
+    
+              <div class="hourlyForcast">
+                  <div class="hourlyForcast-heading">
+                      <h3>Hourly Forcast</h3>
+                  </div>
+                 <div class="hourlyForcastCard">
+                  <div class="hour-card"></div>
+                  <div class="hour-card"></div>
+                  <div class="hour-card"></div>
+                  <div class="hour-card"></div>
+                  <div class="hour-card"></div>
+                  <div class="hour-card"></div>
+                 </div>
+                  
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="search-city cityFound">
+            <img src="./assets/image/search-city.png" alt="">
+            <h3>Search City</h3>
+            <p>Find out the weather condition of the city</p>
+          </div>
+
+          <div class="search-city notFound" style="display: none;">
+            <img src="./assets/image/not-found.png" alt="">
+            <h3>City not found</h3>
+            <p>Find out the weather condition of the city</p>
+          </div>
+          
+    
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

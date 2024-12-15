@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;;
+}
+.container{
+    padding: 3% 15%;
+    background-color: #dad5d5;
+}
+.container-box{
+    height: 550px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.header{
+    padding: 2% 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.header-items{
+    font-size: 20px;
+  
+}
+.location{
+    width: 18px;
+    margin-right: 5px
+}
+.search{
+    width: 20px;
+    position: relative;
+    right: 40px;
+    top: 5px;
+    
+}
+
+input{
+    padding: 5px 15px;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  background: rgb(0,0,0,0.15);
+ 
+
+}
+.mainSection{
+    display: flex;
+    height:85%;
+}
+.mainSection-left{
+    width: 70%;
+    height: 100%;
+    padding: 1% 2%;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.sectionLeft-top{
+    display: flex;
+    justify-content: center;
+}
+.mainSection-right{
+
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    margin: 1%;
+    background-color: rgb(217, 220, 223);
+}
+.temp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.temp-text{
+    font-size: 200px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.wind-humidity{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 120px;
+    height: 70px;
+    position: relative;
+    top: 110px;
+    right: 40px;
+
+    
+}
+.windSpeed{
+    display: flex;
+    justify-content: flex-start;
+
+    gap: 15%;
+}
+.windSpeed img{
+    width: 30px;
+}
+.humidity{
+    display: flex;
+    justify-content: flex-start;
+
+    gap: 15%;
+}
+.humidity img{
+    width: 30px;
+}
+.weather-txt{
+    font-size: 50px;
+    position: relative;
+    top: -30px;
+}
+sup{
+    font-size: 100px;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+.dayForecast{
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    max-height: 150px;
+    overflow-x: auto;
+    padding: 1px 5px;
+   
+}
+.card{
+    height: 130px;
+    min-width: 110px;
+    background: #dbd8d8;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card img{
+    width: 65px;
+}
+.time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.time h3{
+    font-size: 28px;
+}
+.hourlyForcast-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+.hourlyForcastCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1px 5px;
+
+}
+.hourlyForcastCard .hour-card{
+    height: 100px;
+    width: 80px;
+    background: #fff;
+    border-radius: 10px ;
+    margin-top: 10px;
+
+}
+.search-city{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.search-city img{
+    width: 40%;
+}
+.search-city h3{
+font-size: 30px;
+line-height: 40px;
+margin-top: 2%;
+}
+.search-city p{
+    font-size: 20px;
+}
