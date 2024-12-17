@@ -8,6 +8,7 @@ const searchCitySection = document.querySelector(".cityFound");
 const locationTxt = document.querySelector(".location");
 const tempText = document.querySelector(".temp-text");
 const humidityText = document.querySelector(".humidity-txt");
+const pressureText = document.querySelector(".pressure-txt");
 const windSpeedTxt = document.querySelector(".windSpeed-txt");
 const weatherTxt = document.querySelector(".weather-txt");
 const smallWeatherTxt = document.querySelector(".smallWeatherTxt");
@@ -15,6 +16,7 @@ const dateTxt = document.querySelector(".currentDate-text");
 const imgDesc = document.querySelector(".imgDescription");
 
 const forecastDay = document.querySelector(".dayForecast");
+const forecastHour = document.querySelector(".hour-card");
 
 const apiKey = "60e036ffca9ddd83be2aa9eef15661a3";
 
@@ -57,18 +59,19 @@ async function updateWeather(city) {
     tempText.innerHTML = `${Math.round(temp)}<sup>°C</sup>`;
     humidityText.innerHTML = Math.round(humidity) + "%";
     windSpeedTxt.innerHTML = Math.round(speed) + " mph";
+    pressureText.innerHTML = pressure + " pa";
     weatherTxt.textContent = main;
-    smallWeatherTxt.textContent = main;
     dateTxt.textContent = getCurrentDate();
     imgDesc.src = `./assets/image/weather/${getWeatherIcon(id)}`
 
     await updateForeCastData(city);
-
     showSection(mainSection);
 }
+
+
 async function updateForeCastData(city) {
-    const ForeCastData = await getFetchData('forecast', city)
-    const time = "12:00:00"
+    const ForeCastData = await getFetchData('forecast', city);
+    const time = "12:00:00";
 
     const todayDate = new Date().toISOString().split("T")[0];
 
@@ -77,18 +80,15 @@ async function updateForeCastData(city) {
     ForeCastData.list.forEach(forecastWeather => {
         if (forecastWeather.dt_txt.includes(time) && !forecastWeather.dt_txt.includes(todayDate)) {
 
-            updateForeCastItens(forecastWeather);
-            console.log(forecastWeather);
+            updateForeCastItems(forecastWeather);
+            // console.log(forecastWeather);
         }
 
     })
-    // console.log(ForeCastData);
-
 }
 
-
 function getWeatherIcon(id) {
-    console.log(id);
+    // console.log(id);
     if (id < 232) return 'thunderstorm.svg'
     if (id < 321) return 'drizzle.svg'
     if (id < 531) return 'rain.svg'
@@ -97,30 +97,30 @@ function getWeatherIcon(id) {
     if (id < 800) return 'clear.svg'
     else return 'clouds.svg'
 }
-function updateForeCastItens(weatherData) {
-    
+function updateForeCastItems(weatherData) {
+
     const {
         dt_txt: date,
-        weather : [{ id }],
-        main : { temp }
+        weather: [{ id }],
+        main: { temp }
 
     } = weatherData;
-    const forecastDate=new Date(date);
-    const dateFormat={
-        day:'2-digit',
-        month:'short'
+    const forecastDate = new Date(date);
+    const dateFormat = {
+        day: '2-digit',
+        month: 'short'
 
     }
-    const dateresult=forecastDate.toLocaleDateString('en-US',dateFormat)
+    const dateResult = forecastDate.toLocaleDateString('en-US', dateFormat)
 
-    const forecatsItem =
+    const forecastItems =
         `<div class="card">
-            <h3>${dateresult}</h3>
+            <h3>${dateResult}</h3>
             <img src="./assets/image/weather/${getWeatherIcon(id)}" alt="">
             <h3>${Math.round(temp)}°C</h3>
          </div>`;
 
-    forecastDay.insertAdjacentHTML('beforeend', forecatsItem);
+    forecastDay.insertAdjacentHTML('beforeend', forecastItems);
 
 }
 
